@@ -1,0 +1,339 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"path": "appengine",
+			"revision": ""
+		},
+		{
+			"path": "appengine/urlfetch",
+			"revision": ""
+		},
+		{
+			"path": "appengine/user",
+			"revision": ""
+		},
+		{
+			"path": "appengine_internal",
+			"revision": ""
+		},
+		{
+			"path": "appengine_internal/base",
+			"revision": ""
+		},
+		{
+			"path": "cloud.google.com/go/storage",
+			"revision": ""
+		},
+		{
+			"path": "crypto/ed25519",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "Pc2ORQp+VY3Un/dkh4QwLC7R6lE=",
+			"path": "github.com/BurntSushi/toml",
+			"revision": "3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005",
+			"revisionTime": "2018-08-15T10:47:33Z"
+		},
+		{
+			"path": "github.com/DataDog/datadog-go/statsd",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "lG7VAFqxvwOIhwnHPVT4AWlFLmg=",
+			"path": "github.com/armon/go-metrics",
+			"revision": "bab216918dd82f0d2073b712156b12de105c4a5c",
+			"revisionTime": "2020-02-10T15:33:02Z"
+		},
+		{
+			"path": "github.com/beorn7/perks/quantile",
+			"revision": ""
+		},
+		{
+			"path": "github.com/cespare/xxhash/v2",
+			"revision": ""
+		},
+		{
+			"path": "github.com/circonus-labs/circonus-gometrics",
+			"revision": ""
+		},
+		{
+			"path": "github.com/golang/protobuf/proto",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "/+6F+BdkH/l1Mj6zhPzccnoE/qY=",
+			"path": "github.com/google/btree",
+			"revision": "479b5e81b0a93ec038d201b0b33d17db599531d3",
+			"revisionTime": "2019-10-16T02:43:19Z"
+		},
+		{
+			"checksumSHA1": "52vjznwP2OHubLvZkLCUCC9Gp5o=",
+			"path": "github.com/gugemichael/nimo4go",
+			"revision": "32795d80f83ab8c37b47589c5068dfbb14545c34",
+			"revisionTime": "2019-09-04T07:30:57Z"
+		},
+		{
+			"checksumSHA1": "ByRdQMv2yl16W6Tp9gUW1nNmpuI=",
+			"path": "github.com/hashicorp/errwrap",
+			"revision": "8a6fb523712970c966eefc6b39ed2c5e74880354",
+			"revisionTime": "2018-08-24T00:39:10Z"
+		},
+		{
+			"checksumSHA1": "P1Enisj7Nzf3wMl6lgPPar0ljoY=",
+			"path": "github.com/hashicorp/go-immutable-radix",
+			"revision": "0146a9aba1948ded4ed290cfd3fded2c15313f63",
+			"revisionTime": "2019-05-22T20:29:52Z"
+		},
+		{
+			"path": "github.com/hashicorp/go-msgpack/codec",
+			"revision": ""
+		},
+		{
+			"path": "github.com/hashicorp/go-multierror",
+			"revision": ""
+		},
+		{
+			"path": "github.com/hashicorp/go-sockaddr",
+			"revision": ""
+		},
+		{
+			"path": "github.com/hashicorp/golang-lru/simplelru",
+			"revision": ""
+		},
+		{
+			"path": "github.com/hashicorp/memberlist",
+			"revision": ""
+		},
+		{
+			"path": "github.com/matttproud/golang_protobuf_extensions/pbutil",
+			"revision": ""
+		},
+		{
+			"path": "github.com/miekg/dns",
+			"revision": ""
+		},
+		{
+			"path": "github.com/mitchellh/cli",
+			"revision": ""
+		},
+		{
+			"path": "github.com/mitchellh/go-wordwrap",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "UOQ1nSRZ3f+CmrGuMuBItADE/44=",
+			"path": "github.com/natefinch/lumberjack",
+			"revision": "6d54cbc97d7e419cb85c9a5d2123d24f9610817d",
+			"revisionTime": "2015-04-11T23:30:54Z"
+		},
+		{
+			"path": "github.com/posener/complete/cmd/install",
+			"revision": ""
+		},
+		{
+			"path": "github.com/posener/complete/v2/install",
+			"revision": ""
+		},
+		{
+			"path": "github.com/posener/complete/v2/internal/arg",
+			"revision": ""
+		},
+		{
+			"path": "github.com/posener/complete/v2/internal/tokener",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/client_golang/prometheus",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/client_golang/prometheus/internal",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/client_model/go",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/common/expfmt",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/common/model",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/procfs",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/procfs/internal/fs",
+			"revision": ""
+		},
+		{
+			"path": "github.com/prometheus/procfs/internal/util",
+			"revision": ""
+		},
+		{
+			"path": "github.com/ryanuber/columnize",
+			"revision": ""
+		},
+		{
+			"path": "github.com/sean-/seed",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "Ijg5Yx2tIE09R698JrJrlDJuH6U=",
+			"path": "go.opencensus.io",
+			"revision": "643eada29081047b355cfaa1ceb9bc307a10423c",
+			"revisionTime": "2019-12-04T22:02:48Z"
+		},
+		{
+			"checksumSHA1": "q+y8X+5nDONIlJlxfkv+OtA18ds=",
+			"path": "go.opencensus.io/resource",
+			"revision": "643eada29081047b355cfaa1ceb9bc307a10423c",
+			"revisionTime": "2019-12-04T22:02:48Z"
+		},
+		{
+			"path": "go4.org/syncutil/singleflight",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/build/autocertcache",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/crypto/ed25519",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/crypto/ed25519/internal/edwards25519",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/net/bpf",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/net/internal/iana",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/net/internal/socket",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/net/ipv4",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/net/ipv6",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/sys/unix",
+			"revision": ""
+		},
+		{
+			"path": "golang.org/x/sys/windows",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "scqQwqpD1s6YtWRDN+9e/M0pGGc=",
+			"path": "golang.org/x/tools/go/internal/packagesdriver",
+			"revision": "7093a17b0467e77fb41804b2754a44f54a8c9ca2",
+			"revisionTime": "2019-11-18T02:26:56Z"
+		},
+		{
+			"checksumSHA1": "hz9AWg64iyHEomH/Dc48q4dZ+DA=",
+			"path": "golang.org/x/tools/go/types/objectpath",
+			"revision": "7093a17b0467e77fb41804b2754a44f54a8c9ca2",
+			"revisionTime": "2019-11-18T02:26:56Z"
+		},
+		{
+			"checksumSHA1": "dC7MpahR/U0T8CRcTypgrwO1Lg0=",
+			"path": "golang.org/x/tools/internal/fastwalk",
+			"revision": "7093a17b0467e77fb41804b2754a44f54a8c9ca2",
+			"revisionTime": "2019-11-18T02:26:56Z"
+		},
+		{
+			"checksumSHA1": "XbDJHJnizXVv6zxcWNX1at9nD0s=",
+			"path": "golang.org/x/tools/internal/gopathwalk",
+			"revision": "7093a17b0467e77fb41804b2754a44f54a8c9ca2",
+			"revisionTime": "2019-11-18T02:26:56Z"
+		},
+		{
+			"checksumSHA1": "Lcm5y2VtSqdVuOjhBFEeAHNI+ug=",
+			"path": "golang.org/x/tools/internal/semver",
+			"revision": "7093a17b0467e77fb41804b2754a44f54a8c9ca2",
+			"revisionTime": "2019-11-18T02:26:56Z"
+		},
+		{
+			"path": "google.golang.org/appengine",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine/datastore",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine/log",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine/memcache",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine/urlfetch",
+			"revision": ""
+		},
+		{
+			"path": "google.golang.org/appengine/user",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "TM3Neoy1xRAKyZYMGzKc41sDFW4=",
+			"path": "gopkg.in/natefinch/lumberjack.v2",
+			"revision": "a96e63847dc3c67d17befa69c303767e2f84e54f",
+			"revisionTime": "2017-05-31T16:03:50Z"
+		},
+		{
+			"checksumSHA1": "ZCVtfgrRXApZiQIlVqFuo9u//pY=",
+			"path": "honnef.co/go/tools/go/types/typeutil",
+			"revision": "32de78dc1c6c931f2bf017870750b0ca80006601",
+			"revisionTime": "2019-12-01T09:03:26Z"
+		},
+		{
+			"checksumSHA1": "JeoxRaQWjfBxT+nlWtcNZdC55HA=",
+			"path": "honnef.co/go/tools/internal/renameio",
+			"revision": "32de78dc1c6c931f2bf017870750b0ca80006601",
+			"revisionTime": "2019-12-01T09:03:26Z"
+		},
+		{
+			"checksumSHA1": "xR/GmtHAayUgTBf6x/Fmdnq1Z6o=",
+			"path": "honnef.co/go/tools/internal/robustio",
+			"revision": "32de78dc1c6c931f2bf017870750b0ca80006601",
+			"revisionTime": "2019-12-01T09:03:26Z"
+		},
+		{
+			"checksumSHA1": "gQtxFwYFOBPYsKrMaPdidSiMvzA=",
+			"path": "honnef.co/go/tools/ir/irutil",
+			"revision": "32de78dc1c6c931f2bf017870750b0ca80006601",
+			"revisionTime": "2019-12-01T09:03:26Z"
+		},
+		{
+			"checksumSHA1": "JoNcSGBhIAQmfwJA/MJ5XnaNgoo=",
+			"path": "honnef.co/go/tools/loader",
+			"revision": "32de78dc1c6c931f2bf017870750b0ca80006601",
+			"revisionTime": "2019-12-01T09:03:26Z"
+		}
+	],
+	"rootPath": "CouchbaseHAService"
+}

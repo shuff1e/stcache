@@ -1,0 +1,45 @@
+---
+
+- name: make sure ntp, ntpstat have been installed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ntp
+  when:
+    - ansible_os_family == "RedHat"
+
+- name: make sure ntpdate have been installed
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ntpdate
+  when:
+    - ansible_os_family == "RedHat"
+    - ntp_server is defined
+
+- name: make sure ntpd service has been stopped
+  service:
+    name: ntpd
+    state: stopped
+  when:
+    - ansible_os_family == "RedHat"
+    - ntp_server is defined
+
+- name: Adjust Time | start to adjust time with {{ ntp_server }}
+  shell: ntpdate {{ ntp_server }}
+  when: ntp_server is defined
+
+- name: relpace ntp server {{ ntp_server }} in /etc/ntp.conf
+  replace:
+    name: /etc/ntp.conf
+    regexp: 'centos\.pool\.ntp\.org'
+    replace: "{{ ntp_server }}"
+
+- name: make sure ntpd service has been started
+  service:
+    name: ntpd
+    state: started
+  when:
+    - ansible_os_family == "RedHat"

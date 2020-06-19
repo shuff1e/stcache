@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: kill CouchbaseHAService
+      shell: >
+        pid=$(ps -ef | grep CouchbaseHAService | grep -v hypervisor | grep -v grep | awk '{print $2}');
+        ppid=$(ps -ef | awk '{if ($2=='$pid') print $3}');
+        if [[ $ppid -eq 1 ]]; then kill -9 $pid; else kill -9 $ppid $pid; fi

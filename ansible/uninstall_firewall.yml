@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: uninstall firewall
+      shell: iptables -D INPUT 1
+      with_items:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8

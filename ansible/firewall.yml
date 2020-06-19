@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: firewall off some ips
+      shell: iptables -I INPUT -s {{ item }} -j DROP
+      with_items:
+        - 10.41.157.110
+        - 10.62.242.229
+        - 10.52.118.224
+        - 10.128.245.96
+        - 10.128.245.98
+        - 10.62.184.21
+        - 10.62.184.22
+        - 10.62.184.2

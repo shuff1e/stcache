@@ -1,0 +1,104 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - include: ./deploy_ntp.yml
+    - name: mvdir
+      shell: if [ -f /data/CouchbaseHAService ] || [ -d /data/CouchbaseHAService ];then mv /data/CouchbaseHAService /tmp/CouchbaseHAService"-$(date "+%Y-%m-%d-%H:%M:%S")"; fi
+    - name: mkdir
+      file:
+        path: /data/CouchbaseHAService
+        state: directory
+        mode: '0755'
+    - name: send CouchbaseHAService
+      copy:
+        src: ../bin/CouchbaseHAService
+        dest: /data/CouchbaseHAService
+        mode: '0755'
+        force: yes
+    - name: send hypervisor
+      copy:
+        src: ../bin/hypervisor
+        dest: /data/CouchbaseHAService
+        mode: '0755'
+        force: yes
+    - name: send script
+      copy:
+        src: "{{ item }}"
+        dest: /data/CouchbaseHAService
+        owner: root
+        group: root
+        mode: '0755'
+        force: yes
+      with_items:
+        - ../cluster/verify.py
+        - ../cluster/notify.py
+    - name: Copy requests python package
+      copy: src=requests-2.7.0.tar dest=/root/requests-2.7.0.tar mode=0655 force=no
+
+    - name: Decompression requests
+      command: tar -xvf /root/requests-2.7.0.tar
+
+    - name: Install requests
+      command: chdir=/root/requests-2.7.0 python setup.py install
+- hosts: master
+  remote_user: root
+  tasks:
+    - name: set hostname
+      set_fact:
+        hostname: "{{ hostvars[inventory_hostname].inventory_hostname }}"
+    - name: run master
+      shell: >
+        ./hypervisor --daemon --exec="./CouchbaseHAService
+        --node={{ hostname }}
+        --http={{ hostname }}:{{ httpPort }}
+        --raft={{ hostname }}:{{ raftPort }}
+        --join=""
+        --bootstrap=true
+        --gossip={{ hostname }}:{{ gossipPort }}
+        --gossipJoin=""
+        --gossipQuorum={{ gossipQuorum }}
+        --verificationScript={{ verificationScript }}
+        --notificationScript={{ notificationScript }}
+        --eventInterval={{ eventInterval }}
+        1>>$has.log 2>&1" 1>>hypervisor.output 2>&1
+      args:
+        chdir: /data/CouchbaseHAService
+- hosts: slave
+  remote_user: root
+  tasks:
+    - name: Wait for join
+      wait_for:
+        host: "{{ master }}"
+        port: "{{ httpPort }}"
+        state: started
+        timeout: 30
+    - name: Wait for gossipJoin
+      wait_for:
+        host: "{{ master }}"
+        port: "{{ gossipPort }}"
+        state: started
+        timeout: 30
+    - name: timed wait
+      pause:
+        seconds: 5
+    - name: set hostname
+      set_fact:
+        hostname: "{{ hostvars[inventory_hostname].inventory_hostname }}"
+    - name: run slave
+      shell: >
+        ./hypervisor --daemon --exec="./CouchbaseHAService
+        --node={{ hostname }}
+        --http={{ hostname }}:{{ httpPort }}
+        --raft={{ hostname }}:{{ raftPort }}
+        --join={{ master }}:{{ httpPort }}
+        --bootstrap=false
+        --gossip={{ hostname }}:{{ gossipPort }}
+        --gossipJoin={{ master }}:{{ gossipPort }}
+        --gossipQuorum={{ gossipQuorum }}
+        --verificationScript={{ verificationScript }}
+        --notificationScript={{ notificationScript }}
+        --eventInterval={{ eventInterval }}
+        1>>$has.log 2>&1" 1>>hypervisor.output 2>&1
+      args:
+        chdir: /data/CouchbaseHAService
