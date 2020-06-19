@@ -3,13 +3,10 @@ master
 slave
 
 [master]
-10.41.157.110
+127.0.0.1
 
 [slave]
-10.62.242.229
-10.52.118.224
-10.128.245.96
-10.128.245.98
+127.0.0.1
 
 [all:vars]
 httpPort=6000
@@ -22,4 +19,4 @@ eventInterval=300
 ntp_server=""
 
 [slave:vars]
-master=10.41.157.110
+master=127.0.0.1
