@@ -137,6 +137,7 @@ ansible-playbook -i run.hosts kill.yml
 + [KunTjz/stacache](https://github.com/KunTjz/stcache)
 + [octu0/example-memberlist](https://github.com/octu0/example-memberlist)
 + [hashicorp/memberlist](https://github.com/hashicorp/memberlist)
++ [memberlist使用的SWIM协议](https://www.jianshu.com/p/25dbfeff03f0)
 
 # Note
 
