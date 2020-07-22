@@ -138,6 +138,7 @@ ansible-playbook -i run.hosts kill.yml
 + [octu0/example-memberlist](https://github.com/octu0/example-memberlist)
 + [hashicorp/memberlist](https://github.com/hashicorp/memberlist)
 + [memberlist使用的SWIM协议](https://www.jianshu.com/p/25dbfeff03f0)
++ [raft协议](https://www.jianshu.com/p/10ea73d45d4b)
 
 # Note
 
